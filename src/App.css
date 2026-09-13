@@ -1,0 +1,349 @@
+/* --- ESTILOS GENERALES Y LAYOUT --- */
+.app {
+    font-family: 'Arial', sans-serif;
+    background: #fdfaf6;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* --- HEADER CON LOGO INTEGRADO --- */
+  .topbar {
+    background: #1a5c2a;
+    color: white;
+    padding: 12px 25px;
+  }
+  
+  .header-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .header-logo {
+    height: 48px;
+    width: auto;
+    margin-right: 18px;
+    vertical-align: middle;
+    /* Algoritmo de composición visual para eliminar el fondo blanco rasterizado */
+    filter: invert(1);
+    mix-blend-mode: screen;
+  }
+  
+  .tb-title {
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+  }
+  
+  .tb-sub {
+    font-size: 12px;
+    color: #c3e0cc;
+    margin-top: 2px;
+  }
+  
+  /* --- BARRA DE NAVEGACIÓN --- */
+  .nav {
+    display: flex;
+    background: #154c20;
+    padding: 0 15px;
+    border-bottom: 4px solid #ce1126; /* Línea roja característica */
+  }
+  
+  .ntab {
+    padding: 14px 22px;
+    cursor: pointer;
+    font-size: 13px;
+    color: #b3dfbe;
+    font-weight: 700;
+    transition: all 0.2s;
+    text-transform: none;
+  }
+  
+  .ntab:hover {
+    color: white;
+    background: rgba(255,255,255,0.05);
+  }
+  
+  .ntab.active {
+    color: #1a5c2a;
+    background: #fdfaf6;
+    border-radius: 8px 8px 0 0;
+    font-weight: 800;
+  }
+  
+  /* --- CONTENEDOR DE PÁGINAS --- */
+  .page {
+    display: none;
+    padding: 20px;
+  }
+  
+  .page.show {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .left {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .right {
+    flex: 1;
+  }
+  
+  /* --- PANELES ESTILO MAQUETA --- */
+  .panel {
+    background: white;
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid #e6dfd5;
+    box-shadow: 0 2px 8px rgba(26,46,18,0.04);
+  }
+  
+  .ptitle {
+    font-size: 15px;
+    font-weight: 800;
+    color: #1a5c2a;
+    margin-bottom: 12px;
+    border-bottom: 2px solid #f5d020;
+    padding-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  
+  /* --- BOTONES DE CATEGORÍAS (PILLS) --- */
+  .ttabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 15px;
+  }
+  
+  .ttab {
+    padding: 7px 14px;
+    border: 1px solid #1a5c2a;
+    background: white;
+    color: #1a5c2a;
+    cursor: pointer;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 800;
+    transition: all 0.2s;
+  }
+  
+  .ttab:hover {
+    background: #f0f7f2;
+  }
+  
+  .ttab.active {
+    background: #1a5c2a;
+    color: white;
+  }
+  
+  /* --- GRILLA DE PRODUCTOS --- */
+  .igrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  
+  .ibtn {
+    background: white;
+    padding: 12px;
+    border: 1px solid #dddcf0;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.15s;
+  }
+  
+  .ibtn:hover {
+    border-color: #1a5c2a;
+    background: #fafdf8;
+    transform: translateY(-1px);
+  }
+  
+  .ibtn b {
+    font-size: 13px;
+    color: #1a2e12;
+  }
+  
+  .ibtn s {
+    color: #ce1126;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 12px;
+  }
+  
+  /* --- FORMULARIOS --- */
+  .fg {
+    margin-bottom: 12px;
+  }
+  
+  .fl {
+    font-size: 11px;
+    font-weight: 800;
+    color: #444;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+  }
+  
+  .fi {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cccbdf;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 13px;
+    outline: none;
+  }
+  
+  .fi:focus {
+    border-color: #1a5c2a;
+    box-shadow: 0 0 0 2px rgba(26,92,42,0.1);
+  }
+  
+  .tipo-row, .pago-row {
+    display: flex;
+    gap: 6px;
+  }
+  
+  .tipo-opt, .pago-opt {
+    flex: 1;
+    padding: 9px;
+    text-align: center;
+    border: 1px solid #cccbdf;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    background: white;
+    color: #444;
+  }
+  
+  .tipo-opt.active, .pago-opt.active {
+    background: #1a5c2a;
+    color: white;
+    border-color: #1a5c2a;
+  }
+  
+  /* --- CARRITO (COLUMNA DERECHA) --- */
+  .ci {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .ci-info {
+    flex: 1;
+  }
+  
+  .ci-nm {
+    font-size: 13px;
+    font-weight: bold;
+    color: #111;
+  }
+  
+  .ci-sub {
+    font-size: 11px;
+    color: #666;
+    margin-top: 2px;
+  }
+  
+  .total-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1a5c2a;
+    color: white;
+    padding: 12px 15px;
+    border-radius: 6px;
+  }
+  
+  .total-bar .lbl { font-size: 11px; font-weight: bold; letter-spacing: 0.5px; }
+  .total-bar .cnt { font-size: 11px; color: #b3dfbe; }
+  .total-bar .amt { font-size: 22px; font-weight: 900; color: #f5d020; }
+  
+  .btn-generar {
+    width: 100%;
+    padding: 14px;
+    background: #ce1126;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 800;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 3px 0 #960a18;
+    transition: all 0.1s;
+  }
+  
+  .btn-generar:active {
+    transform: translateY(2px);
+    box-shadow: 0 1px 0 #960a18;
+  }
+  
+  .obs-box {
+    margin-bottom: 12px;
+  }
+  .obs-box label {
+    font-size: 11px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .obs-ta {
+    width: 100%;
+    border: 1px solid #cccbdf;
+    border-radius: 6px;
+    padding: 8px;
+    font-family: inherit;
+    font-size: 13px;
+    resize: none;
+    box-sizing: border-box;
+  }
+  
+  /* --- MODAL Y TICKET EMULADO --- */
+  .modal-ov {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,.6);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal-box {
+    background: white;
+    border-radius: 10px;
+    width: 92%;
+    max-width: 480px;
+    max-height: 85vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.3);
+  }
+  
+  .m-close {
+    position: absolute;
+    top: 12px; right: 15px;
+    background: none; border: none;
+    font-size: 24px; cursor: pointer;
+    color: #aaa; font-weight: bold;
+  }
+  .m-close:hover { color: #ce1126; }
+  
+  .pdf-pad { padding: 25px 20px 15px; }
+  .pdf-hdr { text-align: center; border-bottom: 2px dashed #ccc; padding-bottom: 12px; margin-bottom: 12px; }
+  .pdf-logo { font-size: 22px; font-weight: 900; color: #1a5c2a; font-style: italic; }
+  .pdf-brand { font-size: 10px; color: #1a5c2a; letter-spacing: 2px; font-weight: 700; }
+  .pdf-nro { font-size: 16px; font-weight: 800; color: #ce1126; margin-top: 4px; }
+  .pdf-fec { font-size: 11px; color: #666; }
+  .pdf-env { background: #fdfbf7; padding: 10px; border-radius: 6px; margin-bottom: 12px; font-size: 12px; border: 1px solid #e3dec9; }
+  .pdf-env-t { font-weight: 800; color: #1a5c2a; font-size: 10px; text-transform: uppercase; margin-bottom: 6px; border-bottom: 1px solid #e3dec9; padding-bottom: 3px; }
