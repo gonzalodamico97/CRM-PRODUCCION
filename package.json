@@ -1,7 +1,6 @@
 {
   "name": "crm-pizzeria-caballito",
   "version": "0.1.0",
-  "homepage": "https://gonzalodamico97.github.io/CRM-PRODUCCION",
   "private": true,
   "dependencies": {
     "react": "^18.2.0",
